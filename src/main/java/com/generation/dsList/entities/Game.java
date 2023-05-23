@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 @Entity // indentifica a classe como entidade 
 @Table(name = "tb_game") // nome da tabela 
@@ -26,8 +27,12 @@ public class Game {
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT") 
 	private String shortDescription;
-	private String longDescription;
+	
+	@Column(columnDefinition = "TEXT") // colocado para almentar o tamanho aceito pelo 
+	private String longDescription;   //string porque o varchar do sql so aceita string menores de 255
 	
 	public Game() {
 	}
