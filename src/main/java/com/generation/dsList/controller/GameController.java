@@ -21,6 +21,7 @@ public class GameController {
 	@Autowired
 	private GameServices gameServices;
 	
+	// lista todos os games so que usando a classe GameMinDTO, porque la esta abreviado augumas informações do game 
 	@GetMapping
 	public List<GameMinDTO> findAll() {
 		List<GameMinDTO> result = gameServices.findall();
