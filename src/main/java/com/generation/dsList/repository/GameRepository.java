@@ -13,7 +13,7 @@ public interface GameRepository extends JpaRepository<Game, Long>{
 	// consulta personalizada
 	
 	@Query(nativeQuery = true, value = """
-			SELECT tb_game.id, tb_game.title, tb_game.game_year AS `year`, tb_game.img_url AS imgUrl,
+			SELECT tb_game.id, tb_game.title, tb_game.game_year AS GameYear, tb_game.img_url AS imgUrl,
 			tb_game.short_description AS shortDescription, tb_bilonging.position
 			FROM tb_game
 			INNER JOIN tb_bilonging ON tb_game.id = tb_bilonging.game_id
